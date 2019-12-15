@@ -14,18 +14,18 @@ class MyButton extends Component {
 
     render() {
         return (
-            <TouchableOpacity onPress={this.props.onClick} style={[styles.button, { backgroundColor: this.props.bgC, }]}>
-                <Text style={styles.text}>{this.props.text}</Text>
+            <TouchableOpacity onPress={this.props.onClick} style={[styles.button, { backgroundColor: this.props.bgC, }, this.props.style]}>
+                <Text style={[styles.text, this.props.textStyle]}>{this.props.text}</Text>
             </TouchableOpacity>
         );
     }
 }
 
-MyButton.propTypes = {
-    text: PropTypes.string.isRequired,
-    bgC: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-};
+// MyButton.propTypes = {
+//     text: PropTypes.string.isRequired,
+//     bgC: PropTypes.string.isRequired,
+//     onClick: PropTypes.func.isRequired,
+// };
 
 
 const styles = StyleSheet.create({
